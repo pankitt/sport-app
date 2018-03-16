@@ -1,0 +1,20 @@
+{
+  "commands": [
+    {"id": "101", "league": "Ukrainian Premier League", "command": "Shakhtar Donetsk","points": "51"},
+    {"id": "102", "league": "Ukrainian Premier League", "command": "Dynamo Kyiv","points": "45"},
+    {"id": "103", "league": "Ukrainian Premier League", "command": "Vorskla Poltava","points": "37"},
+    {"id": "201", "league": "Ukrainian First League", "command": "Arsenal Kyiv","points": "55"},
+    {"id": "202", "league": "Ukrainian First League", "command": "FC Poltava","points": "50"},
+    {"id": "203", "league": "Ukrainian First League", "command": "Inhulets Petrove","points": "45"},
+    {"id": "301", "league": "Ukrainian Second League", "command": "Ahrobiznes Volochysk","points": "48"},
+    {"id": "302", "league": "Ukrainian Second League", "command": "Prykarpattia Ivano-Frankivsk","points": "38"},
+    {"id": "203", "league": "Ukrainian Second League", "command": "Nyva Ternopil","points": "27"}
+  ],
+  "players" : [
+    {"id": "1101", "name": "Bohdan Butko", "command": "Shakhtar Donetsk", "No": "2", "Position": "DF", "country": "Ukraine"},
+    {"id": "1102", "name": "Serhiy Kryvtsov", "command": "Shakhtar Donetsk", "No": "4", "Position": "DF", "country": "Ukraine"},
+    {"id": "1201", "name": "Heorhiy Bushchan", "command": "Dynamo Kyiv", "No": "1", "Position": "GK", "country": "Ukraine"},
+    {"id": "1202", "name": "Carlos Zambrano", "command": "Dynamo Kyiv", "No": "2", "Position": "DF", "country": "Peru"},
+    {"id": "2101", "name": "Yaroslav Kostenko", "command": "Arsenal Kyiv", "No": "1", "Position": "GK", "country": "Ukraine"}
+  ]
+}
