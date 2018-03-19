@@ -25,7 +25,6 @@ class FilterPlayers extends Component {
                     onHandleText={this.handleText}
                     filterText={this.state.filterText}
                 />
-                <br/>
                 <Players
                     players={this.props.players}
                     filterText={this.state.filterText}

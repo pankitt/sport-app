@@ -25,7 +25,6 @@ class FilterCommands extends Component {
                     onHandleText={this.handleText}
                     filterText={this.state.filterText}
                 />
-                <br/>
                 <Commands
                     commands={this.props.commands}
                     filterText={this.state.filterText}

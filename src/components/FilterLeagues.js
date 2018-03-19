@@ -25,7 +25,6 @@ class FilterLeagues extends Component {
                     onHandleText={this.handleText}
                     filterText={this.state.filterText}
                 />
-                <br/>
                 <Leagues
                     commands={this.props.commands}
                     filterText={this.state.filterText}
