@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Leagues extends Component {
 
@@ -9,22 +10,21 @@ class Leagues extends Component {
         const filterUnique = [];
 
         commands.forEach((item, index) => {
-            filterUnique.push(item.league);
-
-            if (item.league.indexOf(filterUnique[index - 1]) !== -1) {
+            const mySet = new Set(filterUnique);
+            if (mySet.has(item.league)) {
                 return;
             }
+
             if (item.league.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
                 return;
             }
 
             leagues.push(
                 <li key={index}>
-                    {item.league}
+                    <Link to={`/`}>{item.league}</Link>
                 </li>
             );
-
-
+            filterUnique.push(item.league);
         });
 
         return (

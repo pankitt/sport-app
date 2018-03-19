@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Players extends Component {
     render() {
@@ -12,11 +13,9 @@ class Players extends Component {
             }
             playersName.push(
                 <li key={index}>
-                    {item.name} ({item.command})
+                    <Link to={`/`}>{item.name}</Link> ({item.command})
                 </li>
             );
-
-
         });
 
         return (

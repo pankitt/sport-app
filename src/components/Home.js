@@ -6,6 +6,7 @@ class Home extends Component {
         return (
             <section>
                 <h3>Home</h3>
+                Click on Nav menu...
             </section>
         );
     }

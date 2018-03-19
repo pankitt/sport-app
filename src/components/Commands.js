@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Commands extends Component {
     render() {
@@ -12,7 +13,7 @@ class Commands extends Component {
             }
             commandName.push(
                 <li key={index}>
-                    {item.command}
+                    <Link to={`/`}>{item.command}</Link>
                 </li>
             );
         });
