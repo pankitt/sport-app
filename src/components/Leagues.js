@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 
 class Leagues extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            leagueName: []
-        };
-    }
 
     render() {
         const commands = this.props.commands;
