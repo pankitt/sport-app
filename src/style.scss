@@ -4,5 +4,16 @@ body {
   font-family: sans-serif;
 }
   a {
+    display: inline-block;
     padding: 5px;
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  form {
+    padding: 10px 0;
+    input, button {
+      padding: 5px 10px;
+    }
   }

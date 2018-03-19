@@ -1,11 +1,26 @@
 import React, { Component } from 'react';
 
 class Commands extends Component {
-
     render() {
+        const filterText = this.props.filterText;
+        const commands = this.props.commands;
+        const commandName = [];
+
+        commands.forEach((item, index) => {
+            if (item.command.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
+                return;
+            }
+            commandName.push(
+                <li key={index}>
+                    {item.command}
+                </li>
+            );
+        });
+
         return (
             <section>
                 <h3>Commands</h3>
+                <ul>{commandName}</ul>
             </section>
         );
     }

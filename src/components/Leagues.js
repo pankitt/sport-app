@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Leagues extends Component {
 
     render() {
+        const filterText = this.props.filterText;
         const commands = this.props.commands;
         const leagues = [];
         const filterUnique = [];
@@ -13,6 +14,10 @@ class Leagues extends Component {
             if (item.league.indexOf(filterUnique[index - 1]) !== -1) {
                 return;
             }
+            if (item.league.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
+                return;
+            }
+
             leagues.push(
                 <li key={index}>
                     {item.league}
@@ -25,7 +30,7 @@ class Leagues extends Component {
         return (
             <section>
                 <h3>Leagues</h3>
-                {leagues}
+                <ul>{leagues}</ul>
             </section>
         );
     }

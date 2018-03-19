@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from '../../components/Home';
-import Leagues from '../../components/Leagues';
-import Commands from '../../components/Commands';
-import Players from '../../components/Players';
+import FilterLeagues from '../../components/FilterLeagues';
+import FilterCommands from '../../components/FilterCommands';
+import FilterPlayers from '../../components/FilterPlayers';
 
 class Main extends Component {
     render() {
@@ -15,9 +15,9 @@ class Main extends Component {
             <main>
                 <Switch>
                     <Route exact path='/' component={Home} />
-                    <Route path='/leagues' render={(obj) => <Leagues commands={commands} obj={obj} />} />
-                    <Route path='/commands' render={(obj) => <Commands commands={commands} obj={obj} />} />
-                    <Route path='/players' render={(obj) => <Players players={players} obj={obj} />} />
+                    <Route path='/leagues' render={(obj) => <FilterLeagues commands={commands} obj={obj} />} />
+                    <Route path='/commands' render={(obj) => <FilterCommands commands={commands} obj={obj} />} />
+                    <Route path='/players' render={(obj) => <FilterPlayers players={players} obj={obj} />} />
                 </Switch>
             </main>
         );
