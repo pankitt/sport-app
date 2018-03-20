@@ -5,6 +5,7 @@ import Home from '../../components/Home';
 import FilterLeagues from '../../components/FilterLeagues';
 import FilterCommands from '../../components/FilterCommands';
 import FilterPlayers from '../../components/FilterPlayers';
+import PlayerCard from '../../components/PlayerCard';
 
 class Main extends Component {
     render() {
@@ -17,7 +18,8 @@ class Main extends Component {
                     <Route exact path='/' component={Home} />
                     <Route path='/leagues' render={(obj) => <FilterLeagues commands={commands} obj={obj} />} />
                     <Route path='/commands' render={(obj) => <FilterCommands commands={commands} obj={obj} />} />
-                    <Route path='/players' render={(obj) => <FilterPlayers players={players} obj={obj} />} />
+                    <Route exact path='/players' render={(obj) => <FilterPlayers players={players} obj={obj} />} />
+                        <Route path='/players/:number' render={(obj) => <PlayerCard players={players} obj={obj} />} />
                 </Switch>
             </main>
         );

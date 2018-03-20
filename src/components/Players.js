@@ -13,7 +13,7 @@ class Players extends Component {
             }
             playersName.push(
                 <li key={index}>
-                    <Link to={`/`}>{item.name}</Link> ({item.command})
+                    <Link to={`/players/${item.id}`}>{item.name}</Link> ({item.command})
                 </li>
             );
         });
