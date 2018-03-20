@@ -8,7 +8,6 @@ class Leagues extends Component {
         const commands = this.props.commands;
         const filterUnique = [];
         const leagues = [];
-        const countrys = [];
         let lastCountry = null;
 
 
@@ -24,7 +23,7 @@ class Leagues extends Component {
 
             if (item.country !== lastCountry) {
                 leagues.push(
-                    <b key={item.country}>{item.country}</b>
+                    <li key={item.country}><b>{item.country}</b></li>
                 );
             }
             leagues.push(
@@ -39,7 +38,7 @@ class Leagues extends Component {
         return (
             <section>
                 <h3>Leagues</h3>
-                {leagues}
+                <ul>{leagues}</ul>
             </section>
         );
     }
