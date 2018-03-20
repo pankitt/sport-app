@@ -37,8 +37,9 @@ class FilterCommands extends Component {
                     filterText={this.state.filterText}
                 />
                 <SelectCommands
+                    commands={this.props.commands}
                     onHandleLeague={this.handleLeague}
-                    value={this.state.league}
+                    league={this.state.league}
                 />
                 <Commands
                     commands={this.props.commands}

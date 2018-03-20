@@ -11,15 +11,31 @@ class SelectCommands extends Component {
     }
 
     render() {
+        const commands = this.props.commands;
+        const filterUnique = [];
+        const leagues = [];
+
+        commands.forEach((item, index) => {
+            const mySet = new Set(filterUnique);
+            if (mySet.has(item.league)) {
+                return;
+            }
+
+            leagues.push(
+                <option key={index} value={item.league}>
+                    {item.league}
+                </option>
+            );
+            filterUnique.push(item.league);
+        });
+
         return (
             <div>
                 <label>
                     Select League:
                     <select value={this.props.league} onChange={this.handleLeague}>
                         <option value="all">all</option>
-                        <option value="grapefruit">Grapefruit</option>
-                        <option value="lime">Lime</option>
-                        <option value="mango">Mango</option>
+                        {leagues}
                     </select>
                 </label>
             </div>
