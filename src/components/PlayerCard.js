@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class PlayerCard extends Component {
-
     render() {
         const num = this.props.obj.match.params.number;
         const players = this.props.players;
@@ -22,6 +22,7 @@ class PlayerCard extends Component {
                         <li>country - {item.country}</li>
                     </ul>
                 </div>
+                <p><Link to='/players'>Back</Link></p>
             </section>
         );
     }
