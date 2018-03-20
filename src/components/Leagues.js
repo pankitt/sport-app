@@ -7,8 +7,9 @@ class Leagues extends Component {
         const filterText = this.props.filterText;
         const commands = this.props.commands;
         const filterUnique = [];
-        const ua_leagues = [];
-        const usa_leagues = [];
+        const leagues = [];
+        const countrys = [];
+        let lastCountry = null;
 
 
         commands.forEach((item, index) => {
@@ -20,30 +21,25 @@ class Leagues extends Component {
             if (item.league.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
                 return;
             }
-            if (item.country === 'Ukraine') {
-                ua_leagues.push(
-                    <li key={index}>
-                        <Link to={`/`}>{item.league}</Link>
-                    </li>
+
+            if (item.country !== lastCountry) {
+                leagues.push(
+                    <b key={item.country}>{item.country}</b>
                 );
             }
-            if (item.country === 'USA') {
-                usa_leagues.push(
-                    <li key={index}>
-                        <Link to={`/`}>{item.league}</Link>
-                    </li>
-                );
-            }
+            leagues.push(
+                <li key={index}>
+                    <Link to={`/`}>{item.league}</Link>
+                </li>
+            );
+            lastCountry = item.country;
             filterUnique.push(item.league);
         });
 
         return (
             <section>
                 <h3>Leagues</h3>
-                <b>Ukraine</b>
-                <ul>{ua_leagues}</ul>
-                <b>USA</b>
-                <ul>{usa_leagues}</ul>
+                {leagues}
             </section>
         );
     }
