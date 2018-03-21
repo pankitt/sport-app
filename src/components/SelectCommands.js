@@ -1,39 +1,39 @@
 import React, { Component } from 'react';
 
-class SelectCommands extends Component {
+class SelectLeagues extends Component {
     constructor(props) {
         super(props);
-        this.handleLeague = this.handleLeague.bind(this);
+        this.handleCommand = this.handleCommand.bind(this);
     }
 
-    handleLeague(e) {
-        this.props.onHandleLeague(e.target.value);
+    handleCommand(e) {
+        this.props.onhandleCommand(e.target.value);
     }
 
     render() {
-        const commands = this.props.commands;
+        const players = this.props.players;
         const filterUnique = [];
         const leagues = [];
 
-        commands.forEach((item, index) => {
-            if (filterUnique.indexOf(item.league) !== -1) {
+        players.forEach((item, index) => {
+            if (filterUnique.indexOf(item.command) !== -1) {
                 return
             }
 
             leagues.push(
-                <option key={index} value={item.league}>
-                    {item.league}
+                <option key={index} value={item.command}>
+                    {item.command}
                 </option>
             );
 
-            filterUnique.push(item.league);
+            filterUnique.push(item.command);
         });
 
         return (
             <div>
                 <label>
-                    Select League:
-                    <select value={this.props.league} onChange={this.handleLeague}>
+                    Select Command:
+                    <select value={this.props.command} onChange={this.handleCommand}>
                         <option value="all">all</option>
                         {leagues}
                     </select>
@@ -44,4 +44,4 @@ class SelectCommands extends Component {
 
 }
 
-export default SelectCommands;
+export default SelectLeagues;

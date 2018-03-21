@@ -18,7 +18,7 @@ class PlayerCard extends Component {
           <ul>
             <li>command - {item.command}</li>
             <li>No - {item.No}</li>
-            <li>Position - {item.Position}</li>
+            <li>Position - {item.position}</li>
             <li>country - {item.country}</li>
           </ul>
         </div>

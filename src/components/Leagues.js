@@ -27,7 +27,7 @@ class Leagues extends Component {
             }
             leagues.push(
                 <li key={index}>
-                    <Link to={`/`}>{item.league}</Link>
+                    <Link to={`/commands`}>{item.league}</Link>
                 </li>
             );
             lastCountry = item.country;

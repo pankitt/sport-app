@@ -1,21 +1,42 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+class CommandsList extends Component {
+    render(){
+        const name = this.props.name;
+        const id = this.props.id;
+        const position = this.props.position;
+
+        return (
+            <li>
+                <Link to={`/players/${id}`}>{name}</Link> {position}
+            </li>
+        )
+    }
+}
+
 class Players extends Component {
     render() {
         const filterText = this.props.filterText;
         const players = this.props.players;
+        const command = this.props.command;
         const playersName = [];
 
         players.forEach((item, index) => {
             if (item.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
                 return;
             }
-            playersName.push(
-                <li key={index}>
-                    <Link to={`/players/${item.id}`}>{item.name}</Link> ({item.command})
-                </li>
-            );
+            if (command === 'all') {
+                playersName.push(
+                    <CommandsList key={index} id ={item.id} name={item.name}/>
+                );
+
+            }
+            if (command === item.command) {
+                playersName.push(
+                    <CommandsList key={index} id ={item.id} name={item.name} position={item.position}/>
+                );
+            }
         });
 
         return (

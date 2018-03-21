@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Commands from './Commands';
 import SearchBar from './SearchBar';
-import SelectCommands from './SelectCommands';
+import SelectLeagues from './SelectLeagues';
 
 class FilterCommands extends Component {
     constructor(props) {
@@ -24,7 +24,6 @@ class FilterCommands extends Component {
         this.setState({
             league: league
         });
-
     }
 
     render() {
@@ -36,7 +35,7 @@ class FilterCommands extends Component {
                     onHandleText={this.handleText}
                     filterText={this.state.filterText}
                 />
-                <SelectCommands
+                <SelectLeagues
                     commands={this.props.commands}
                     onHandleLeague={this.handleLeague}
                     league={this.state.league}

@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 class CommandsList extends Component {
     render(){
         const command = this.props.command;
+        const points = this.props.points;
 
         return (
             <li>
-                <Link to={`/`}>{command}</Link>
+                <Link to={`/players`}>{command}</Link> {points}
             </li>
         )
     }
@@ -32,7 +33,7 @@ class Commands extends Component {
             }
             if (league === item.league) {
                 commandName.push(
-                    <CommandsList key={index} command={item.command}/>
+                    <CommandsList key={index} command={item.command} points={item.points}/>
                 );
             }
         });
