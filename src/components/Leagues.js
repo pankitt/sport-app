@@ -12,9 +12,8 @@ class Leagues extends Component {
 
 
         commands.forEach((item, index) => {
-            const mySet = new Set(filterUnique);
-            if (mySet.has(item.league)) {
-                return;
+            if (filterUnique.indexOf(item.league) !== -1) {
+                return
             }
 
             if (item.league.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {

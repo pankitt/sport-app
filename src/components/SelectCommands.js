@@ -16,9 +16,8 @@ class SelectCommands extends Component {
         const leagues = [];
 
         commands.forEach((item, index) => {
-            const mySet = new Set(filterUnique);
-            if (mySet.has(item.league)) {
-                return;
+            if (filterUnique.indexOf(item.league) !== -1) {
+                return
             }
 
             leagues.push(
@@ -26,6 +25,7 @@ class SelectCommands extends Component {
                     {item.league}
                 </option>
             );
+
             filterUnique.push(item.league);
         });
 
