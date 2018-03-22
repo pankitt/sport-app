@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class PlayerCard extends Component {
   render() {
@@ -30,4 +31,10 @@ class PlayerCard extends Component {
   }
 }
 
-export default PlayerCard;
+function mapStateToProps(state) {
+  return {
+    players: state.players
+  };
+}
+
+export default connect(mapStateToProps)(PlayerCard);

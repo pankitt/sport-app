@@ -1,47 +1,53 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class SelectLeagues extends Component {
-    constructor(props) {
-        super(props);
-        this.handleCommand = this.handleCommand.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.handleCommand = this.handleCommand.bind(this);
+  }
 
-    handleCommand(e) {
-        this.props.onhandleCommand(e.target.value);
-    }
+  handleCommand(e) {
+    this.props.onhandleCommand(e.target.value);
+  }
 
-    render() {
-        const players = this.props.players;
-        const filterUnique = [];
-        const leagues = [];
+  render() {
+    const players = this.props.players;
+    const filterUnique = [];
+    const leagues = [];
 
-        players.forEach((item, index) => {
-            if (filterUnique.indexOf(item.command) !== -1) {
-                return
-            }
+    players.forEach((item, index) => {
+      if (filterUnique.indexOf(item.command) !== -1) {
+        return;
+      }
 
-            leagues.push(
-                <option key={index} value={item.command}>
-                    {item.command}
-                </option>
-            );
+      leagues.push(
+        <option key={index} value={item.command}>
+          {item.command}
+        </option>
+      );
 
-            filterUnique.push(item.command);
-        });
+      filterUnique.push(item.command);
+    });
 
-        return (
-            <div>
-                <label>
-                    Select Command:
-                    <select value={this.props.command} onChange={this.handleCommand}>
-                        <option value="all">all</option>
-                        {leagues}
-                    </select>
-                </label>
-            </div>
-        )
-    }
-
+    return (
+      <div>
+        <label>
+          Select Command:
+          <select value={this.props.command} onChange={this.handleCommand}>
+            <option value="all">all</option>
+            {leagues}
+          </select>
+        </label>
+      </div>
+    );
+  }
 }
 
-export default SelectLeagues;
+function mapStateToProps(state) {
+  return {
+    players: state.players
+  };
+}
+
+export default connect(mapStateToProps)(SelectLeagues);
