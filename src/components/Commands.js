@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from "react-redux";
 
 class CommandsList extends Component {
     render(){
@@ -47,4 +48,11 @@ class Commands extends Component {
     }
 }
 
-export default Commands;
+
+function mapStateToProps(state) {
+    return {
+        commands: state.commands
+    };
+}
+
+export default connect(mapStateToProps)(Commands);

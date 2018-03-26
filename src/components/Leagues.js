@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from "react-redux";
 
 class Leagues extends Component {
 
@@ -43,4 +44,10 @@ class Leagues extends Component {
     }
 }
 
-export default Leagues;
+function mapStateToProps(state) {
+    return {
+        commands: state.commands
+    };
+}
+
+export default connect(mapStateToProps)(Leagues);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import {connect} from "react-redux";
 
-class SelectCommands extends Component {
+class SelectLeagues extends Component {
     constructor(props) {
         super(props);
         this.handleLeague = this.handleLeague.bind(this);
@@ -44,4 +45,10 @@ class SelectCommands extends Component {
 
 }
 
-export default SelectCommands;
+function mapStateToProps(state) {
+    return {
+        commands: state.commands
+    };
+}
+
+export default connect(mapStateToProps)(SelectLeagues);

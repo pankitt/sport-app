@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import nav from './temp';
+import commands from './commands';
 import players from './players';
 
 export default combineReducers({
-  nav,
-  players
+    commands,
+    players
 });
